@@ -17,6 +17,7 @@ import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 import { SharedModule } from '../shared/shared.module';
+import { LancamentoService } from './lancamento.service';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { SharedModule } from '../shared/shared.module';
   exports: [
     LancamentoCadastroComponent,
     LancamentosPesquisaComponent
-  ]
+  ],
+  providers: [LancamentoService]
 })
 export class LancamentosModule { }
