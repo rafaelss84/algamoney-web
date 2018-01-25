@@ -7,7 +7,7 @@ import * as moment from 'moment';
 export class LancamentoFiltro {
   descricao: string;
   dataVencimentoInicio: Date;
-  dataVencimetoFim: Date;
+  dataVencimentoFim: Date;
   pagina = 0;
   itensPorPagina = 5;
 }
@@ -34,8 +34,8 @@ export class LancamentoService {
     if (filtro.dataVencimentoInicio) {
       params.set('dataVencimentoDe', moment(filtro.dataVencimentoInicio).format('YYYY-MM-DD'));
     }
-    if (filtro.dataVencimetoFim) {
-      params.set('dataVencimentoAte', moment(filtro.dataVencimetoFim).format('YYYY-MM-DD'));
+    if (filtro.dataVencimentoFim) {
+      params.set('dataVencimentoAte', moment(filtro.dataVencimentoFim).format('YYYY-MM-DD'));
     }
 
     return this.http.get(`${this.lancamentosUrl}?resumo`, { headers, search: params })
