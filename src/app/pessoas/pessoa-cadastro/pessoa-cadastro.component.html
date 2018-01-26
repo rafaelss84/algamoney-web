@@ -1,5 +1,5 @@
 <div class="container">
-  <form #f="ngForm" autocomplete="off">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g">
 
       <div class="ui-g-12">
@@ -8,7 +8,7 @@
 
       <div class="ui-g-12 ui-fluid">
         <label>Nome</label>
-        <input pInputText type="text" name="nome" ngModel #nome="ngModel"
+        <input pInputText type="text" name="nome" [(ngModel)]="pessoa.nome" #nome="ngModel"
           required
           minlength="5"
         >
@@ -23,7 +23,7 @@
 
       <div class="ui-g-12 ui-md-9 ui-fluid">
         <label>Logradouro</label>
-        <input pInputText type="text" ngModel name="logradouro" #logradouro="ngModel" required>
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.logradouro" name="logradouro" #logradouro="ngModel" required>
 
         <app-message [control]="logradouro" error="required"
           text="Informe o logradouro"
@@ -32,7 +32,7 @@
 
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Número</label>
-        <input pInputText type="text" ngModel name="numero" #numero="ngModel" required>
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.numero" name="numero" #numero="ngModel" required>
 
         <app-message [control]="numero" error="required"
           text="Informe o numero"
@@ -41,12 +41,12 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Complemento</label>
-        <input pInputText type="text" ngModel name="complemento" #complemento="ngModel">
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.complemento" name="complemento" #complemento="ngModel">
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Bairro</label>
-        <input pInputText type="text" ngModel name="bairro" #bairro="ngModel" required>
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.bairro" name="bairro" #bairro="ngModel" required>
 
         <app-message [control]="bairro" error="required"
           text="Informe o bairro"
@@ -57,7 +57,7 @@
         <label>CEP</label>
         <p-inputMask
           mask="99.999-999"
-          ngModel
+          [(ngModel)]="pessoa.endereco.cep"
           name="cep"
           #cep="ngModel"
           required
@@ -70,7 +70,7 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Cidade</label>
-        <input pInputText type="text" ngModel name="cidade" #cidade="ngModel" required>
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.cidade" name="cidade" #cidade="ngModel" required>
 
         <app-message [control]="cidade" error="required"
           text="Informe a cidade"
@@ -79,7 +79,7 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Estado</label>
-        <input pInputText type="text" ngModel name="estado" #estado="ngModel" required>
+        <input pInputText type="text" [(ngModel)]="pessoa.endereco.estado" name="estado" #estado="ngModel" required>
 
         <app-message [control]="estado" error="required"
           text="Informe o estado"
