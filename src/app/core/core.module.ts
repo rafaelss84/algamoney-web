@@ -9,6 +9,7 @@ import { CategoriaService } from '../categorias/categorias.service';
 import { ToastyModule } from 'ng2-toasty';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ConfirmationService } from 'primeng/components/common/api';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ConfirmationService } from 'primeng/components/common/api';
     ConfirmDialogModule
   ],
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    PaginaNaoEncontradaComponent
   ],
   exports: [
     NavbarComponent,

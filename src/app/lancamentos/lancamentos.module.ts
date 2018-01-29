@@ -41,10 +41,7 @@ import { LancamentoService } from './lancamento.service';
     LancamentoCadastroComponent,
     LancamentosPesquisaComponent
   ],
-  exports: [
-    LancamentoCadastroComponent,
-    LancamentosPesquisaComponent
-  ],
+  exports: [],
   providers: [LancamentoService]
 })
 export class LancamentosModule { }
