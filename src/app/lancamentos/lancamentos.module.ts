@@ -18,14 +18,15 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 import { SharedModule } from '../shared/shared.module';
 import { LancamentoService } from './lancamento.service';
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule,
 
     SharedModule,
+    LancamentosRoutingModule,
 
     InputTextModule,
     ButtonModule,
