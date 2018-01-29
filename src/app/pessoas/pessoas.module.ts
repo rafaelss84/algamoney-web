@@ -7,6 +7,7 @@ import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.compo
 import { PessoaService } from './pessoa.service';
 
 import { SharedModule } from '../shared/shared.module';
+import { PessoasRoutingModule } from './pessoas-routing.module';
 
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ButtonModule } from 'primeng/components/button/button';
@@ -20,6 +21,7 @@ import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
     FormsModule,
 
     SharedModule,
+    PessoasRoutingModule,
 
     InputTextModule,
     ButtonModule,
