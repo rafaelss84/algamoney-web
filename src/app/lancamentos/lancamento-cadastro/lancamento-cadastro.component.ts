@@ -7,7 +7,6 @@ import { FormControl } from '@angular/forms/src/model';
 import { LancamentoService } from '../lancamento.service';
 import { ToastyService } from 'ng2-toasty';
 import { ActivatedRoute, Router } from '@angular/router';
-import { setTimeout } from 'timers';
 
 @Component({
   selector: 'app-lancamento-cadastro',
