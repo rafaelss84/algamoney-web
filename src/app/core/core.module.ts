@@ -10,6 +10,7 @@ import { ToastyModule } from 'ng2-toasty';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ConfirmationService } from 'primeng/components/common/api';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { AuthService } from '../seguranca/auth.service';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
     ConfirmDialogModule
   ],
   providers: [
+    AuthService,
     ErrorHandlerService,
     ConfirmationService,
     CategoriaService,
