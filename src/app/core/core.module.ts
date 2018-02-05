@@ -11,6 +11,7 @@ import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdia
 import { ConfirmationService } from 'primeng/components/common/api';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { AuthService } from '../seguranca/auth.service';
+import { JwtHelper } from 'angular2-jwt';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { AuthService } from '../seguranca/auth.service';
     ErrorHandlerService,
     ConfirmationService,
     CategoriaService,
-    {provide: LOCALE_ID, useValue: 'pt'}
+    {provide: LOCALE_ID, useValue: 'pt'},
+    JwtHelper
   ]
 })
 export class CoreModule { }
