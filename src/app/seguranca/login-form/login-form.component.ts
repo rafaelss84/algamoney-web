@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
-import { errorHandler } from '@angular/platform-browser/src/browser';
 import { Router } from '@angular/router';
 
 @Component({
