@@ -12,6 +12,7 @@ import { ConfirmationService } from 'primeng/components/common/api';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { AuthService } from '../seguranca/auth.service';
 import { JwtHelper } from 'angular2-jwt';
+import { NaoAutorizadoComponent } from './nao-autorizado.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { JwtHelper } from 'angular2-jwt';
   ],
   declarations: [
     NavbarComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    NaoAutorizadoComponent
   ],
   exports: [
     NavbarComponent,

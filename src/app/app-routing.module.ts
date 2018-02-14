@@ -6,9 +6,11 @@ import { LancamentoCadastroComponent } from './lancamentos/lancamento-cadastro/l
 import { PessoasPesquisaComponent } from './pessoas/pessoas-pesquisa/pessoas-pesquisa.component';
 import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadastro.component';
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
+import { NaoAutorizadoComponent } from './core/nao-autorizado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lancamentos', pathMatch: 'full' },
+  { path: 'nao-autorizado', component: NaoAutorizadoComponent },
   { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent },
   { path: '**', redirectTo: 'pagina-nao-encontrada' }
 ];
