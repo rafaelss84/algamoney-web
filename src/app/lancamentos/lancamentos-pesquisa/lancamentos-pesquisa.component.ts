@@ -5,6 +5,7 @@ import { ToastyService } from 'ng2-toasty';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../../seguranca/auth.service';
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
@@ -20,6 +21,7 @@ export class LancamentosPesquisaComponent implements OnInit {
 
   constructor(
     private lancamentosService: LancamentoService,
+    private auth: AuthService,
     private toasty: ToastyService,
     private confirmation: ConfirmationService,
     private errorHandler: ErrorHandlerService,
