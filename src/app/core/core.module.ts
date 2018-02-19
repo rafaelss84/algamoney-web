@@ -37,7 +37,7 @@ import { NaoAutorizadoComponent } from './nao-autorizado.component';
     ErrorHandlerService,
     ConfirmationService,
     CategoriaService,
-    {provide: LOCALE_ID, useValue: 'pt'},
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
     JwtHelper
   ]
 })
