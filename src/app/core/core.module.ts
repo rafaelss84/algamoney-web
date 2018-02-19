@@ -14,6 +14,11 @@ import { AuthService } from '../seguranca/auth.service';
 import { JwtHelper } from 'angular2-jwt';
 import { NaoAutorizadoComponent } from './nao-autorizado.component';
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt');
+
 @NgModule({
   imports: [
     CommonModule,
@@ -37,7 +42,7 @@ import { NaoAutorizadoComponent } from './nao-autorizado.component';
     ErrorHandlerService,
     ConfirmationService,
     CategoriaService,
-    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    {provide: LOCALE_ID, useValue: 'pt'},
     JwtHelper
   ]
 })
