@@ -8,13 +8,13 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { DataTableModule } from 'primeng/datatable';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from 'primeng/calendar';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import {TableModule} from 'primeng/table';
 
 import { SharedModule } from '../shared/shared.module';
 import { LancamentoService } from './lancamento.service';
@@ -30,7 +30,7 @@ import { LancamentosRoutingModule } from './lancamentos-routing.module';
 
     InputTextModule,
     ButtonModule,
-    DataTableModule,
+    TableModule,
     TooltipModule,
     InputTextareaModule,
     CalendarModule,
