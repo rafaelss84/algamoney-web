@@ -3,11 +3,11 @@ import { CategoriaService } from '../../categorias/categorias.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { PessoaService } from '../../pessoas/pessoa.service';
 import { Lancamento } from '../../core/model';
-import { FormControl } from '@angular/forms/src/model';
 import { LancamentoService } from '../lancamento.service';
 import { ToastyService } from 'ng2-toasty';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-lancamento-cadastro',
@@ -24,6 +24,7 @@ export class LancamentoCadastroComponent implements OnInit {
   categorias = [];
   pessoas = [];
   lancamento = new Lancamento();
+  formulario: FormGroup;
 
   constructor(
     private categoriaService: CategoriaService,
@@ -33,10 +34,13 @@ export class LancamentoCadastroComponent implements OnInit {
     private errorHandler: ErrorHandlerService,
     private route: ActivatedRoute,
     private router: Router,
-    private title: Title
+    private title: Title,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.configurarFormulario();
+
     const codigoLancamento = this.route.snapshot.params['codigo'];
 
     this.title.setTitle('Novo lançamento');
@@ -52,6 +56,27 @@ export class LancamentoCadastroComponent implements OnInit {
   get editando() {
     return Boolean(this.lancamento.codigo);
   }
+
+  configurarFormulario() {
+    this.formulario = this.formBuilder.group({
+      codigo: [],
+      tipo: ['RECEITA', Validators.required],
+      dataVencimento: [null, Validators.required],
+      dataPagamento: [],
+      descricao: [null, [Validators.required, Validators.minLength(5)]],
+      valor: [null, Validators.required],
+      pessoa: this.formBuilder.group({
+        codigo: [null, Validators.required],
+        nome: []
+      }),
+      categoria: this.formBuilder.group({
+        codigo: [null, Validators.required],
+        nome: []
+      }),
+      observacao: []
+    });
+  }
+
 
   carregarLancamento(codigo: number) {
     this.lancamentoService.buscarPorCodigo(codigo)
