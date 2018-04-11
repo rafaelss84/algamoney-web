@@ -11,9 +11,9 @@ import { PessoasRoutingModule } from './pessoas-routing.module';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { DataTableModule } from 'primeng/datatable';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputMaskModule } from 'primeng/inputmask';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -25,7 +25,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 
     InputTextModule,
     ButtonModule,
-    DataTableModule,
+    TableModule,
     TooltipModule,
     InputMaskModule
   ],
