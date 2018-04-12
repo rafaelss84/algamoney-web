@@ -14,6 +14,9 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
 import { AuthService } from '../seguranca/auth.service';
 import { JwtHelper } from 'angular2-jwt';
 import { NaoAutorizadoComponent } from './nao-autorizado.component';
+import {LancamentoService} from '../lancamentos/lancamento.service';
+import {PessoaService} from '../pessoas/pessoa.service';
+import {Title} from '@angular/platform-browser';
 
 registerLocaleData(localePt, 'pt');
 
@@ -36,12 +39,17 @@ registerLocaleData(localePt, 'pt');
     ConfirmDialogModule
   ],
   providers: [
-    AuthService,
-    ErrorHandlerService,
-    ConfirmationService,
+    // Precisamos declarar aqui os providers dos modulos lazyloaded, senao a aplicacao nao sabe de sua existencia
+    LancamentoService,
+    PessoaService,
     CategoriaService,
-    {provide: LOCALE_ID, useValue: 'pt'},
-    JwtHelper
+    ErrorHandlerService,
+    AuthService,
+
+    ConfirmationService,
+    JwtHelper,
+    Title,
+    { provide: LOCALE_ID, useValue: 'pt' }
   ]
 })
 export class CoreModule { }

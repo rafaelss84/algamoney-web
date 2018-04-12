@@ -12,13 +12,13 @@ const routes: Routes = [
     data: { roles: ['ROLE_PESQUISAR_LANCAMENTO'] }
   },
   {
-    path: '/novo',
+    path: 'novo',
     component: LancamentoCadastroComponent,
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_CADASTRAR_LANCAMENTO'] }
   },
   {
-    path: '/:codigo',
+    path: ':codigo',
     component: LancamentoCadastroComponent,
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_CADASTRAR_LANCAMENTO'] }
