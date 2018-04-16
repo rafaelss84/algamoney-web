@@ -7,7 +7,7 @@ import { LancamentoService } from '../lancamento.service';
 import { ToastyService } from 'ng2-toasty';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-lancamento-cadastro',
@@ -63,7 +63,7 @@ export class LancamentoCadastroComponent implements OnInit {
       tipo: ['RECEITA', Validators.required],
       dataVencimento: [null, Validators.required],
       dataPagamento: [],
-      descricao: [null, [Validators.required, Validators.minLength(5)]],
+      descricao: [null, [this.validarObrigatoriedade, this.validarTamanhoMinimo(5)]],
       valor: [null, Validators.required],
       pessoa: this.formBuilder.group({
         codigo: [null, Validators.required],
@@ -77,6 +77,17 @@ export class LancamentoCadastroComponent implements OnInit {
     });
   }
 
+  validarObrigatoriedade(input: FormControl) {
+    // Se precisar usar o valor de outro input na validação, podemos acessá-lo da seguinte forma:
+    // const dtVencimento = input.root.get('dataVencimento').value;
+    return (input.value ? null : { obrigatoriedade: true });
+  }
+
+  validarTamanhoMinimo(valor: number) {
+    return (input: FormControl) => {
+      return (!input.value || input.value.length >= valor ? null : { tamanhoMinimo: { tamanho: valor } });
+    };
+  }
 
   carregarLancamento(codigo: number) {
     this.lancamentoService.buscarPorCodigo(codigo)

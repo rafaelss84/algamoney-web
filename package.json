@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "compodoc -p src/tsconfig.app.json -s -r 5000"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "moment": "^2.20.1",
     "ng2-currency-mask": "^4.4.1",
     "ng2-toasty": "^4.0.3",
+    "npm": "^5.8.0",
     "primeng": "^5.2.4",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
